@@ -1,0 +1,18 @@
+int h1=0,h2=0;
+
+int TreeHeight(node *root){
+  
+  if(root == NULL)
+    return 0;
+  else {
+  
+    h1=TreeHeight(root->left);
+    h2=TreeHeight(root->right);
+  
+    if(h1>h2)
+      return h1+1;
+    else
+      return h2+1;
+  }
+  
+}
