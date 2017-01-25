@@ -1,0 +1,12 @@
+void deleteTree(node *root) {
+
+  if(root) {
+  
+  deleteTree(root->left);
+  deleteTree(root->right);
+  
+  cout<<"Node deleted is "<<root->data;
+  free(root);
+  
+  }
+}
