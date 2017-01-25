@@ -1,0 +1,15 @@
+bool identicalTrees(node *root1, node *root2) {
+
+  if(root1 == NULL && root2 == NULL)
+    return true;
+  else if(root1 !=NULL && root2!=NULL)
+  {
+  
+    return (root->data == root2->data &&
+            identicalTrees(root->left) &&
+            identicalTrees(root->right));
+ 
+  }
+  
+  return false;
+}
