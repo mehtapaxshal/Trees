@@ -1,0 +1,14 @@
+Node *mirrorCopy(Node *root){
+
+  Node *temp;
+  if(root==NUL)
+    return NULL;
+    
+  temp=(Node *)malloc(sizeof(Node));
+  temp->data = root->data;
+  
+  temp->left = mirrorCopy(root->right);
+  temp->right = mirrorCopy(root->left);
+  
+  return temp;
+}
