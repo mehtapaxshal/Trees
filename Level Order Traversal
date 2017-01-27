@@ -1,0 +1,42 @@
+/* height of tree */
+int heightTree(node *root){
+
+  if (root==NULL)
+        return 0;
+    else
+    {
+        int lh = height(root->left);
+        int rh = height(root->right);
+ 
+        /* use the larger one */
+        if (lh > rh)
+            return(lh+1);
+        else return(rh+1);
+    }
+
+}
+
+/* start for level 1 till height of the tree */
+void printLevelOrder(node *root){
+
+int h = heightTree(root);
+
+for(int i=1;i<=h;i++)
+  printOrderTraversal(root,i);
+  
+}
+
+/* to print at given level */
+void printOrderTraversal(node *root, int level){
+
+if (root == NULL)
+        return;
+if (level == 1)
+  cout<<root->data<<endl;
+else if (level > 1)
+{
+  printOrderTraversal(root->left, level-1);
+  printOrderTraversal(root->right, level-1);
+}
+
+}
